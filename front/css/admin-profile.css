@@ -1,0 +1,540 @@
+/* admin-profile.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: black;
+    color: #00ff00;
+    overflow-y: auto;
+}
+
+/* Contenedor Principal */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Título */
+.profile-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-header h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Tarjeta de Perfil */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* Foto de Perfil */
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00ff00;
+    margin-right: 20px;
+}
+
+/* Información del Administrador */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    margin: 5px 0 0;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+/* Animación de Fondo */
+.hacker-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.hacker-animation span {
+    width: 2px;
+    height: 100%;
+    background: #00ff00;
+    animation: flicker 1.5s infinite;
+}
+
+
+.hacker-animation span:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.hacker-animation span:nth-child(odd) {
+    animation-delay: 0.4s;
+}
+
+/* Estilo General para Secciones */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Tarjeta de Acción dentro de cada Sección */
+.action-card {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.action-card p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.action-card button {
+    background-color: rgba(0, 255, 0, 0.2);
+    font-family: 'Orbitron', sans-serif;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.action-card button:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Modales */
+.modal {
+    font-family: 'Orbitron', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    color: #00ff00;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: black;
+    color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+.modal-content button {
+    background: rgba(0, 255, 0, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.modal-content button:hover {
+    background: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+/* Efecto de Parpadeo */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+  /* Sección de Institutos */
+#institutos-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    text-align: center;
+}
+
+#institutos-section h2 {
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    margin-bottom: 10px;
+}
+
+/* Tabla General de Cursos y Grupos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+table th, table td {
+    border: 1px solid #00ff00;
+    padding: 10px;
+    text-align: left;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+table th {
+    background: rgba(0, 255, 0, 0.2);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+table tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+table tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+table tr:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* Contenedores de Gestión Dinámica */
+#gestion-institutos-dinamico {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+#comunidades-container, #institutos-container, #cursos-container, #grupos-container {
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    margin-bottom: 10px;
+}
+
+/* Selectores de Comunidades e Institutos */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: black;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+    font-size: 1rem;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Botón para Cerrar Gestión */
+#cerrar-gestion-institutos-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+#cerrar-gestion-institutos-btn:hover {
+    background-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 10px #ff0000;
+}
+/* Botón para Cerrar Sesión */
+#cerrar-sesion-btn {
+    font-family: 'Orbitron', sans-serif;
+    display: block;
+    margin: 20px auto;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+#cerrar-sesion-btn:hover {
+    background-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* Sección de Generación de Claves */
+#generarClaves-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    text-align: center;
+}
+
+#generarClaves-section h2 {
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+    margin-bottom: 20px;
+}
+
+/* Botón para Abrir el Formulario */
+#abrirFormulario {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#abrirFormulario:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Formulario de Generación de Claves */
+#generarClaves-form {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+    text-align: left;
+}
+
+#generarClaves-form label {
+    color: #00ff00;
+    font-size: 1rem;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#generarClaves-form input,
+#generarClaves-form select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    background: black;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+}
+
+#generarClaves-form button {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#generarClaves-form button:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Botón para Ver Todas las Claves */
+#verClaves {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#verClaves:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Tabla para Mostrar Claves */
+#resultado-claves {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+#resultado-claves h3 {
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 15px;
+}
+
+/* Tabla de Claves */
+#resultado-claves table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+#resultado-claves th,
+#resultado-claves td {
+    border: 1px solid #00ff00;
+    padding: 10px;
+    text-align: left;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#resultado-claves th {
+    background: rgba(0, 255, 0, 0.2);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#resultado-claves tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#resultado-claves tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#resultado-claves tr:hover {
+    background: rgba(0, 255, 0, 0.1);
+}
+
+/* Botón para Cerrar Resultado */
+#cerrar-resultado-claves-btn {
+    display: inline-block;
+    margin: 10px auto 0;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+#cerrar-resultado-claves-btn:hover {
+    background-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 10px #ff0000;
+}

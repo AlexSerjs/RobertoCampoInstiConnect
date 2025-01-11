@@ -1,0 +1,139 @@
+
+@media (max-width: 850px) {
+    /* General Style */
+    body {
+        justify-content: flex-start; /* Asegura que el contenido no se centre verticalmente */
+        padding-top: 10px; /* Reduce el espacio superior */
+    }
+
+    /* Botón del muro */
+    .wall-button {
+        left: 20px; /* Reduce el margen izquierdo */
+        top: 20px; /* Reduce el margen superior */
+    }
+
+    .wall-button img {
+        width: 80px; /* Reduce el tamaño del botón */
+        height: 80px;
+    }
+
+    /* Contenedor principal */
+    .main-container {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        gap: 10px; /* Reduce el espacio entre elementos */
+        margin-top: 10px; /* Reduce el margen superior */
+    }
+
+    /* Perfil del alumno */
+    .profile-container {
+        padding: 20px; /* Reduce el padding */
+        width: 95%; /* Ocupa casi todo el ancho */
+        max-width: none; /* Elimina el límite de ancho máximo */
+    }
+
+    .profile-photo img {
+        width: 100px; /* Reduce el tamaño de la foto */
+        height: 100px;
+        border: 3px solid #00796b; /* Ajusta el grosor del borde */
+    }
+
+    .profile-details p {
+        font-size: 1rem; /* Reduce el tamaño de fuente */
+    }
+
+    /* Sección Horario */
+    .schedule-container {
+        padding: 15px; /* Reduce el padding */
+        width: 95%; /* Ocupa casi todo el ancho */
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 5px; /* Reduce el padding en las celdas */
+        font-size: 0.8rem; /* Reduce el tamaño de fuente */
+    }
+
+    /* Sección Asignaturas */
+    .asignaturas-container {
+        padding: 15px; /* Reduce el padding */
+        width: 95%; /* Ocupa casi todo el ancho */
+    }
+
+    .asignaturas-table th,
+    .asignaturas-table td {
+        padding: 3px; /* Reduce el padding */
+        font-size: 0.56rem; /* Reduce el tamaño de fuente */
+    }
+    .schedule-container {
+        padding: 5px;
+        width: 100%; /* Más pequeña en móviles */
+    }
+
+    .schedule-table {
+        width: 90%;
+        font-size: 0.1em; /* Reduce el tamaño del texto */
+    }
+
+    /* Ocultar la columna de hora */
+    .schedule-table th:first-child,
+    .schedule-table td:first-child {
+        display: none;
+    }
+    /* Ajustar celdas para que ocupen menos espacio */
+    .schedule-table th,
+    .schedule-table td {
+        padding: 3px; /* Reduce el padding */
+        font-size: 0.56rem;
+    }
+    
+
+    /* Modal */
+    #modalEditarPerfil .modal-content {
+        width: 50%; /* Ajusta el ancho */
+        max-width: 400px; /* Asegura un tamaño máximo razonable */
+        margin: 30px auto; /* Centra el modal horizontal y verticalmente */
+        padding: 10px; /* Reduce el padding interno */
+        border-radius: 10px; /* Bordes más pequeños */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+        transform: translateX(0); /* Asegura que no haya desplazamiento lateral */
+        box-sizing: border-box; /* Evita problemas con el ancho y padding */
+    }
+    
+
+    /* Botón de cierre */
+    #modalEditarPerfil .close {
+        font-size: 18px; /* Reduce el tamaño */
+        position: absolute; /* Asegura que no se desplace */
+        top: 10px; /* Ajusta la posición superior */
+        right: 10px; /* Ajusta la posición lateral */
+    }
+
+    /* Formulario */
+    #modalEditarPerfil .form-group label {
+        font-size: 12px; /* Texto más pequeño */
+        margin-bottom: 5px; /* Reduce el espacio inferior */
+    }
+
+    #modalEditarPerfil .form-group input {
+        font-size: 14px; /* Tamaño adecuado para móviles */
+        padding: 8px; /* Reduce el padding */
+        width: calc(100% - 16px); /* Asegura que no se salga del contenedor */
+    }
+
+    /* Botón de envío */
+    #modalEditarPerfil button {
+        font-size: 14px; /* Texto más pequeño */
+        padding: 10px; /* Ajusta el padding */
+        margin-top: 10px; /* Ajusta el margen superior */
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+    }
+
+    /* Mensaje opcional */
+    #modalEditarPerfil .form-message {
+        font-size: 12px; /* Texto más pequeño */
+        margin-top: -5px; /* Ajusta el espacio superior */
+        margin-bottom: 10px; /* Ajusta el espacio inferior */
+    }
+}
+
+

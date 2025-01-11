@@ -1,0 +1,341 @@
+/* Estilos específicos para móviles */
+@media (max-width: 850px) {
+    /* Ajustes generales */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    /* Botón para ir al muro */
+    .wall-button {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+
+    .wall-button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Sección de detalles del perfil */
+    .profile-details-section {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-photo img {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-details {
+        font-size: 0.9em;
+        line-height: 1.4;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .profile-details p {
+        margin: 5px 0;
+    }
+
+    button#editarPerfil {
+        display: block;
+        margin: 10px auto;
+        padding: 8px 15px;
+        background-color: #00796b;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+    }
+
+    button#editarPerfil:hover {
+        background-color: #005bb5;
+    }
+
+    /* Modal de edición de perfil */
+    #modalEditarPerfil {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    #modalEditarPerfil .modal-content {
+        padding: 15px;
+    }
+
+    #modalEditarPerfil .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+        color: #333333;
+    }
+
+    #modalEditarPerfil form .form-group {
+        margin-bottom: 15px;
+    }
+
+    #modalEditarPerfil form label {
+        font-size: 0.9em;
+        color: #333333;
+    }
+
+    #modalEditarPerfil form input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 0.9em;
+    }
+
+    #modalEditarPerfil button {
+        display: block;
+        margin: 10px auto;
+        padding: 8px 15px;
+        background-color: #00796b;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+    }
+
+    /* Tabla de integrantes del grupo */
+    .group-members-section {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .group-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8em;
+    }
+
+    .group-table th,
+    .group-table td {
+        padding: 8px;
+        border: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    .group-table th {
+        background-color: #00796b;
+        color: #ffffff;
+    }
+
+    /* Formulario para agregar asignaturas */
+    .add-subject-section {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-subject-section form {
+        font-size: 0.9em;
+    }
+
+    .add-subject-section form label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+    }
+
+    .add-subject-section form input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 0.9em;
+    }
+
+    .add-subject-section form button {
+        width: 100%;
+        padding: 8px;
+        background-color: #00796b;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+    }
+
+    /* Tabla de asignaturas guardadas */
+    .saved-subjects-section {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .saved-subjects-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8em;
+    }
+
+    .saved-subjects-table th,
+    .saved-subjects-table td {
+        padding: 8px;
+        border: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    .saved-subjects-table th {
+        background-color: #00796b;
+        color: #ffffff;
+    }
+
+    /* Horario */
+    .schedule-configuration {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.8em;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px;
+        border: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    .schedule-table th {
+        background-color: #00796b;
+        color: #ffffff;
+    }
+
+    table {
+        width: 100%; /* Ocupa el ancho completo del contenedor */
+        max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+        border-collapse: collapse;
+        font-size: 0.5em; /* Reduce el tamaño de la fuente */
+        overflow-x: auto; /* Habilita el desplazamiento horizontal si es necesario */
+        display: block; /* Convierte la tabla en un bloque para manejo de overflow */
+    }
+    th, td {
+        padding: 6px;
+        border: 1px solid #dddddd;
+        text-align: center;
+        font-size: 0.4em;
+        word-break: break-word; /* Permite que las palabras largas se corten */
+    }
+
+    th {
+        background-color: #00796b;
+        color: white;
+    }
+
+    /* Contenedor de tablas */
+    .group-members-section, .saved-subjects-section, .schedule-configuration {
+        overflow-x: auto; /* Habilita el scroll horizontal si la tabla es más ancha que la pantalla */
+    }
+
+    .group-table, .saved-subjects-table, .schedule-table {
+        width: 100%; /* Asegura que la tabla ocupe el ancho completo del contenedor */
+    }
+
+    /* Asegura que los encabezados y celdas se alineen bien en pantallas pequeñas */
+    th, td {
+        font-size: 0.7em; /* Ajusta el tamaño de la fuente */
+        padding: 5px; /* Reduce el espacio interno */
+    }
+
+    .add-subject-section {
+        margin: 10px; /* Margen reducido */
+        padding: 10px; /* Padding reducido */
+        background-color: #ffffff;
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        width: 95%; /* Ocupa casi todo el ancho de la pantalla */
+        max-width: 400px; /* Ancho máximo */
+        box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+    }
+
+    .add-subject-section h2 {
+        font-size: 1.2em; /* Tamaño más pequeño para el título */
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 10px;
+    }
+
+    .add-subject-section form {
+        font-size: 0.9em; /* Reducir el tamaño de fuente */
+    }
+
+    .add-subject-section form label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9em; /* Tamaño de letra reducido */
+    }
+
+    .add-subject-section form input {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        padding: 8px; /* Espaciado interno reducido */
+        margin-bottom: 10px; /* Espaciado entre campos */
+        border: 1px solid #cccccc; /* Borde claro */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 0.9em; /* Tamaño de fuente reducido */
+        box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+    }
+
+    .add-subject-section form button {
+        width: 100%; /* Botón de ancho completo */
+        padding: 8px; /* Espaciado interno reducido */
+        background-color: #00796b; /* Fondo */
+        color: #ffffff; /* Texto blanco */
+        border: none;
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 0.9em; /* Tamaño de letra reducido */
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .add-subject-section form button:hover {
+        background-color: #005bb5; /* Fondo más oscuro al pasar el cursor */
+    }
+
+
+}

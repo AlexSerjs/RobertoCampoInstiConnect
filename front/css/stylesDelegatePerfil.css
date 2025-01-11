@@ -1,0 +1,507 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo del botón para ir al muro */
+.wall-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.wall-button img {
+    width: 50px;
+    cursor: pointer;
+}
+
+/* Sección de Información del Delegado */
+.profile-details-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.profile-details-section h1 {
+    color: #00796b;
+}
+
+.profile-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-details p strong {
+    color: #00796b;
+}
+
+/* Sección de Integrantes del Grupo */
+.group-members-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.group-members-section h2 {
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+/* Estilo de la tabla de integrantes */
+.group-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.group-table th, .group-table td {
+    border: 1px solid #00796b;
+    padding: 10px;
+    text-align: center;
+}
+
+.group-table th {
+    background-color: #00796b;
+    color: white;
+}
+
+.verification-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.verified {
+    background-color: green;
+}
+
+.not-verified {
+    background-color: red;
+}
+
+.publish-toggle {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+
+
+/* Sección para agregar asignaturas */
+.add-subject-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.add-subject-section h2 {
+    color: #00796b;
+}
+
+.add-subject-section form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.add-subject-section label {
+    font-weight: bold;
+}
+
+.add-subject-section input {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 90%;
+}
+
+#addSubjectBtn {
+    grid-column: span 2;
+    padding: 10px 15px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#addSubjectBtn:hover {
+    background-color: #005f56;
+}
+
+/* Tabla de asignaturas guardadas */
+.saved-subjects-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: fit-content;
+    width: 100%;
+}
+
+.saved-subjects-section h2 {
+    color: #00796b;
+}
+
+.saved-subjects-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.saved-subjects-table th, .saved-subjects-table td {
+    border: 1px solid #00796b;
+    padding: 10px;
+    text-align: center;
+}
+
+.saved-subjects-table th {
+    background-color: #00796b;
+    color: white;
+}
+
+/* Sección de configuración del horario */
+.schedule-configuration {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: fit-content;
+    width: 100%;
+    text-align: center;
+}
+
+.schedule-configuration h2 {
+    color: #00796b;
+}
+
+#scheduleType {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#generateScheduleBtn {
+    padding: 10px 15px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#generateScheduleBtn:hover {
+    background-color: #005f56;
+}
+
+/* Tabla de horario */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #00796b;
+    padding: 10px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #00796b;
+    color: white;
+}
+
+.editable {
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.editable:hover {
+    background-color: #e0f0e5;
+}
+
+/* Indicador de error */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Estilos para el fondo del modal */
+#editModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilos para el formulario en modo cuadrícula */
+.modal-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Estilos para que los elementos ocupen toda la columna */
+.modal-form label {
+    text-align: left;
+    padding-right: 18px;
+    grid-column: span 1;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 5px;
+    grid-column: span 1;
+}
+
+.modal-form button {
+    grid-column: span 2; /* Ocupa ambas columnas */
+    margin-top: 10px;
+}
+
+
+/* Contenedor de los botones de horario */
+#scheduleButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo general para botones */
+button {
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón Modificar Horario */
+#modifyScheduleBtn {
+    background-color: #00796b;
+    color: white;
+    display: block !important;
+}
+
+#modifyScheduleBtn:hover {
+    background-color: #005f56;
+}
+
+/* Botón Guardar Horario */
+#saveScheduleBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#saveScheduleBtn:hover {
+    background-color: #388E3C;
+}
+
+/* Botón Modificar */
+button[onclick^="editarAsignatura"] {
+    background-color: #FFC107;
+    color: white;
+}
+
+button[onclick^="editarAsignatura"]:hover {
+    background-color: #FFA000;
+}
+
+/* Botón Eliminar */
+button[onclick^="eliminarAsignatura"] {
+    background-color: #F44336;
+    color: white;
+}
+
+button[onclick^="eliminarAsignatura"]:hover {
+    background-color: #D32F2F;
+}
+
+/* Botón Guardar Cambios */
+#saveChangesBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#saveChangesBtn:hover {
+    background-color: #388E3C;
+}
+
+/* Botón Cancelar */
+#closeModalBtn {
+    background-color: #9E9E9E;
+    color: white;
+}
+
+#closeModalBtn:hover {
+    background-color: #757575;
+}
+
+/* Opcional: Añadir espacio entre botones en el modal */
+.modal-content button {
+    margin: 5px;
+}
+
+/* Estilos para el modal de horario */
+.modal-horario {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Cambiar a "flex" cuando se muestre el modal */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-horario-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%; /* Limita el ancho en pantallas más grandes */
+    max-width: 800px;
+    max-height: 80vh; /* Limita la altura del modal */
+    overflow-y: auto; /* Añade scroll si el contenido es demasiado grande */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilos para la tabla dentro del modal de horario */
+.tabla-modal-horario {
+    width: 100%;
+    table-layout: fixed; /* Asegura que las columnas tengan un ancho fijo */
+    border-collapse: collapse;
+}
+
+.tabla-modal-horario th,
+.tabla-modal-horario td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #00796b;
+    font-size: 0.9em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.tabla-modal-horario select,
+.tabla-modal-horario input[type="time"] {
+    width: 100%; /* Ajusta al tamaño de la celda */
+    box-sizing: border-box;
+    font-size: 0.85em;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* Botones dentro del modal */
+.boton-modal-horario {
+    margin: 10px;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-modal-horario.guardar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.boton-modal-horario.guardar:hover {
+    background-color: #388E3C;
+}
+
+.boton-modal-horario.cancelar {
+    background-color: #9E9E9E;
+    color: white;
+}
+
+.boton-modal-horario.cancelar:hover {
+    background-color: #757575;
+}
+
+
+
+
+
+/* Responsividad: ajuste de ancho para dispositivos pequeños */
+@media (max-width: 768px) {
+    .modal-horario-content {
+        width: 95%; /* Ajusta el ancho en móviles */
+        max-width: 100%; /* Elimina el límite de ancho para aprovechar más el espacio */
+    }
+
+    .tabla-modal-horario th,
+    .tabla-modal-horario td {
+        font-size: 0.8em; /* Reduce el tamaño de fuente para celdas en pantallas pequeñas */
+        padding: 6px;
+    }
+}
+
+

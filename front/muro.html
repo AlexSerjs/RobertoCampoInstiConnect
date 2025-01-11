@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstiConnect - Publicaciones</title>
+    <link rel="stylesheet" href="css/muroGeneral.css">
+    <link rel="stylesheet" href="css/leftSidebar.css">
+    <link rel="stylesheet" href="css/mainMuro.css">
+    <link rel="stylesheet" href="css/rightSidebar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mobileMuro.css" media="(max-width:850px)">
+</head>
+
+<body>
+    <div class="mobile-controls" style="display: none;">
+        <button id="toggle-left">Menú Izquierdo</button>
+        <button id="toggle-right">Menú Derecho</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const leftSidebar = document.querySelector('.left-sidebar');
+            const rightSidebar = document.querySelector('.right-sidebar');
+            const toggleLeftButton = document.getElementById('toggle-left');
+            const toggleRightButton = document.getElementById('toggle-right');
+    
+            // Mostrar/Ocultar barra lateral izquierda
+            toggleLeftButton.addEventListener('click', () => {
+                leftSidebar.classList.toggle('open');
+            });
+    
+            // Mostrar/Ocultar barra lateral derecha
+            toggleRightButton.addEventListener('click', () => {
+                rightSidebar.classList.toggle('open');
+            });
+    
+            // Cerrar al hacer clic fuera de las barras laterales
+            document.addEventListener('click', (e) => {
+                if (!leftSidebar.contains(e.target) && !toggleLeftButton.contains(e.target)) {
+                    leftSidebar.classList.remove('open');
+                }
+                if (!rightSidebar.contains(e.target) && !toggleRightButton.contains(e.target)) {
+                    rightSidebar.classList.remove('open');
+                }
+            });
+        });
+    </script>
+    <div class="left-sidebar">
+        <!-- Sección de perfil de usuario -->
+        <section id="seccion-perfil">
+            <div class="user-profile">
+                <!-- Imagen de usuario -->
+                <img src="" alt="Foto de usuario" id="fotoUsuario" class="user-photo">
+    
+                <!-- Menú de perfil que se muestra al hacer clic en la foto -->
+                <div id="menuPerfil" class="profile-menu" style="display: none;">
+                    <ul>
+                        <li><a href="#" id="enlacePerfil">Ver Perfil</a></li> <!-- Enlace al perfil -->
+                        <li><a href="#" id="cambiarFoto">Cambiar Foto</a></li> <!-- Botón para cambiar foto -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Modal para cambiar la foto -->
+        <div id="modalCambiarFoto" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" id="cerrarModalFoto">&times;</span> <!-- Botón para cerrar el modal -->
+                <h3>Cambiar Foto</h3>
+                <input type="file" id="nuevaFoto" name="nuevaFoto" accept="image/*">
+                <img id="previewImage" alt="Previsualización" style="width: 100%; max-width: 200px; margin-top: 10px;">
+                <button id="subirFotoBtn">Subir Foto</button>
+            </div>
+        </div>
+
+                <!-- Sección con información del usuario -->
+                <section id="seccion-info-usuario">
+                    <div class="user-info">
+                        <p class="user-name">NOMBRE USUARIO</p> <!-- Aquí va el nombre -->
+                        <p class="user-email">Email</p> <!-- Aquí va el email -->
+                    </div>
+                </section>
+                
+                
+                <section id="menu-lateral">
+                    <div class="menu-container">
+                        <h3>Crear Encuesta</h3>
+                        <form id="form-encuesta">
+                            <div class="form-group">
+                                <label for="pregunta">Pregunta:</label>
+                                <input type="text" id="pregunta" name="pregunta" placeholder="Escribe tu pregunta aquí..." required>
+                            </div>
+                        
+                            <div id="opciones-container">
+                                <!-- Opciones iniciales -->
+                                <div class="form-group opcion">
+                                    <label for="opcion1">Opción 1:</label>
+                                    <input type="text" id="opcion1" name="opcion[]" placeholder="Escribe la opción 1">
+                                </div>
+                                <div class="form-group opcion">
+                                    <label for="opcion2">Opción 2:</label>
+                                    <input type="text" id="opcion2" name="opcion[]" placeholder="Escribe la opción 2">
+                                </div>
+                            </div>
+                        
+                            <button type="button" id="add-opcion" class="add-opcion">Agregar Opción</button>
+                            <button type="submit" class="crear-encuesta">Crear Encuesta</button>
+                        </form>
+                        
+                        
+                        
+                        <hr>
+                
+                        <div class="submit-archivos">
+                            <p>Subir Ficheros</p>
+                            <!-- Botones para subir imágenes y archivos -->
+                            <button id="subirImagenBtn">Subir Imagen</button>
+                            <button id="subirArchivoBtn">Subir Archivo</button>
+                                                        
+                        </div>
+                        
+
+                        <!-- Modal para subir imagen -->
+                        <div id="modalImagen" class="modal">
+                            <div class="modal-content">
+                                <span class="close" id="closeImagenModal">&times;</span>
+                                <h3>Selecciona una imagen</h3>
+                                <label for="tituloImagen">Título de la publicación:</label>
+                                <input type="text" id="tituloImagen" name="tituloImagen" placeholder="Escribe un título">
+                                <input type="file" id="imagenSubida" name="imagenSubida" accept="image/*">
+                                <img id="archivoPreview" alt="Previsualización" style="display: none; width: 100%; max-width: 200px; margin-top: 10px;">
+                                <button id="submitImagenBtn">Subir Imagen</button>
+                            </div>
+                        </div>
+
+
+                           <!-- Modal para subir archivo -->
+            <div id="modalArchivo" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeArchivoModal">&times;</span>
+                    <h3>Selecciona un archivo</h3>
+                    <label for="tituloArchivo">Título:</label>
+                    <input type="text" id="tituloArchivo" name="tituloArchivo" placeholder="Escribe un título">
+                    <input type="file" id="archivoSubido" name="archivoSubido" accept=".pdf,.doc,.docx,.txt">
+                    <button id="submitArchivoBtn">Subir Archivo</button>
+                </div>
+            </div>
+                            
+                        
+                    </div>
+                </section>
+
+                <section id="section-cerrar-sesion">
+                    <button class="cerrar-sesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+                </section>
+          
+    
+
+    </div>
+
+    <!-- Muro Central -->
+    <div class="main-wall">
+        <h1>Publicaciones</h1>
+        <div id="muro-publicaciones">
+            <!-- Las publicaciones dinámicas se agregarán aquí -->
+        </div>
+    </div>
+
+    
+    <!-- Muro Derecho -->
+<div class="right-sidebar">
+    <!-- Widget del clima -->
+    <div id="weather" class="weather-widget">
+        <p>Cargando el clima...</p>
+    </div>
+
+    <!-- Enlaces con imágenes -->
+    <div class="image-links">
+        <a href="https://www.educa2.madrid.org/educamadrid/" target="_blank">
+            <img src="images/educamadrid-logo-nuevo.jpg" alt="Enlace a EducaMadrid" class="redirect-image">
+        </a>
+        <a href="https://raices.madrid.org/raiz_app/jsp/portal/portalraices.html" target="_blank">
+            <img src="images/logoRAICES_blanco.png" alt="Enlace a RAICES" class="redirect-image">
+        </a>
+    </div>
+
+    <div class="submit-comunicado">
+        <p><strong>Crear Comunicado</strong></p>
+        <form id="form-comunicado">
+            <!-- Campo para el título -->
+            <div class="form-group">
+                <input
+                    type="text"
+                    id="titulo-comunicado"
+                    name="titulo"
+                    placeholder="Título del comunicado"
+                    required
+                />
+            </div>
+            
+            <!-- Campo para el contenido del comunicado -->
+            <div class="form-group">
+                <textarea
+                    id="comunicado"
+                    name="contenido"
+                    placeholder="Escribe tu comunicado aquí..."
+                    rows="5"
+                    required
+                ></textarea>
+            </div>
+    
+            <button type="submit" class="crear-encuesta">Enviar Comunicado</button>
+        </form>
+    </div>
+    
+    
+
+
+    
+
+</div>
+
+<!-- JavaScript embebido -->
+<script>
+    // API del clima
+    const apiKey = '11025253286c7296bf43c675b1bcbd8d';
+    const city = 'Madrid';
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(weatherUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la respuesta de la API');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const weatherDiv = document.getElementById('weather');
+            const temperature = data.main.temp;
+            const description = data.weather[0].description;
+            const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
+            weatherDiv.innerHTML = `
+                <h3>Clima en ${city}</h3>
+                <p>Temperatura: ${temperature}°C</p>
+                <p>${description}</p>
+                <img src="${icon}" alt="Icono del clima">
+            `;
+        })
+        .catch(error => {
+            const weatherDiv = document.getElementById('weather');
+            weatherDiv.innerHTML = `<p>No se pudo obtener el clima en este momento.</p>`;
+            console.error('Error al obtener los datos del clima:', error);
+        });
+</script>
+
+
+    <script src="js/mainMuro.js"></script>
+    <script src="js/encuesta.js"></script>
+    <script src="js/publicaciones.js"></script>
+    <script src="js/comunicado.js"></script>
+    <script src="js/subirArchivos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,926 @@
+/* General */
+body {
+    font-family: 'Orbitron', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wall-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Sidebar izquierdo */
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #e0f7fa; /* Fondo suave */
+    padding: 10px;
+    color: #00796b; /* Color principal */
+    width: 25%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    border-radius: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Sección de perfil de usuario */
+#seccion-perfil {
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#seccion-perfil #fotoUsuario {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Información del usuario */
+#seccion-info-usuario {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto 20px;
+    word-wrap: break-word;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.user-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: teal;
+}
+
+/* Menú de perfil */
+.profile-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e6f7ff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 10;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-menu li {
+    margin: 10px 0;
+}
+
+.profile-menu a {
+    text-decoration: none;
+    color: #00796b;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.profile-menu a:hover {
+    color: #00584e;
+}
+
+/* Menú lateral */
+#menu-lateral {
+    background-color: #fff;
+    padding: 20px;
+    width: 85%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+    
+}
+
+#menu-lateral h3 {
+    margin-top: 3%;
+    font-size: 1.5rem;
+    color: teal;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#menu-lateral input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#menu-lateral .crear-encuesta, #menu-lateral .cerrar-sesion {
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+#menu-lateral .crear-encuesta:hover {
+    background-color: darkcyan;
+}
+
+#section-cerrar-sesion {
+    text-align: center; /* Centrar el botón */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+#section-cerrar-sesion .cerrar-sesion {
+    margin-top: 10%;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#section-cerrar-sesion .cerrar-sesion:hover {
+    background-color: darkred;
+    transform: scale(1.05); /* Pequeño zoom */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#section-cerrar-sesion .cerrar-sesion:active {
+    transform: scale(1); /* Vuelve al tamaño original */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#opciones-container {
+    margin-bottom: 10px;
+}
+
+.add-opcion {
+    margin-top: 1%;
+    margin-bottom: 5%;
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.add-opcion:hover {
+    background-color: #45a049;
+}
+
+.opcion input {
+    margin-bottom: 10px;
+}
+
+
+
+/* Estilo para el área de subir archivos */
+.submit-archivos p {
+    margin-top: 10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: teal;
+    
+}
+
+#archivoSubido {
+    margin-top: 10px;
+    font-size: 0.7rem;
+}
+
+#archivoPreview {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 250px;
+}
+
+#submitArchivosBtn {
+    background: linear-gradient(45deg, #00796b, #009688); /* Gradiente atractivo */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Transición para hover */
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+#submitArchivosBtn:hover {
+    background: linear-gradient(45deg, #00584e, #00796b); /* Cambia el gradiente */
+    transform: translateY(-2px); /* Efecto de "levantamiento" */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    font-size: 0.7rem;
+}
+
+#submitArchivosBtn:active {
+    transform: translateY(1px); /* Botón presionado */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.7rem;
+}
+
+
+
+/* Muro central */
+.main-wall {
+    flex-grow: 1;
+    background-color: white;
+    margin-left: 26%;
+    margin-right: 320px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+    width: 50%;
+}
+
+/* Publicaciones */
+.post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar derecho */
+.right-sidebar {
+    width: 25%;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-content .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal-content .close:hover {
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .wall-container {
+        flex-direction: column;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-wall {
+        margin: 0;
+        width: 50%;
+    }
+}
+
+
+/* Publicaciones */
+.post {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.post-header h3 {
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+}
+
+.post-media img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.post-actions a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.post-actions a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .left-sidebar, .right-sidebar {
+        display: none;
+    }
+
+    .main-wall {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Estilo básico para el muro de publicaciones ----------------------------------------- */
+#muro-publicaciones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* Centrar el h1 dentro de .main-wall */
+.main-wall h1 {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 2rem; /* Tamaño de fuente más grande para destacar el título */
+    color: #333; /* Color oscuro para el texto */
+    margin-bottom: 20px; /* Espaciado inferior para separar del contenido */
+}
+
+/* Estilos para cada publicación */
+.publicacion {
+    border: 1px solid #ddd; /* Borde ligero para cada publicación */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Fondo claro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavizar animaciones */
+}
+
+/* Efecto hover para la publicación */
+.publicacion:hover {
+    transform: scale(1.02); /* Le da un pequeño aumento al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
+}
+
+/* Título de la publicación */
+.publicacion h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Información del autor y la fecha */
+.publicacion strong {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Fecha en un color más claro */
+.publicacion small {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Contenido de la publicación */
+.publicacion p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Imagen dentro de la publicación */
+.publicacion img {
+    max-width: 100%;  /* Hace que la imagen ocupe el 100% del ancho disponible */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    max-height: 300px;  /* Limita la altura de la imagen */
+    object-fit: contain;  /* Asegura que la imagen se ajuste dentro del contenedor sin recortarse */
+    margin-top: 10px;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+/* Estilo para los enlaces de los archivos */
+.publicacion a {
+    color: #007bff; /* Color azul para el enlace */
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.publicacion a:hover {
+    text-decoration: underline;
+}
+
+.publicacion p, .publicacion small, .publicacion strong {
+    margin: 5px 0;
+}
+
+/* Estilo para el contenedor de publicaciones si no hay contenido */
+#muro-publicaciones.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Se oculta el modal por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Botón de cerrar el modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos generales para mejorar la presentación */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Estilo del contenedor principal */
+.main-wall {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los botones de acción */
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Muro de publicaciones */
+#muro-publicaciones {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Publicaciones */
+.publicacion {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.publicacion:last-child {
+    border-bottom: none;
+}
+
+.publicacion h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.publicacion p {
+    font-size: 14px;
+    color: #555;
+}
+
+.publicacion small {
+    display: block;
+    color: #888;
+    margin-top: 10px;
+}
+
+.publicacion strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Imagenes */
+.publicacion img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón para descargar archivo */
+.publicacion a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.publicacion a:hover {
+    background-color: #45a049;
+}
+
+/* Encuestas */
+.encuesta {
+    margin-top: 15px;
+}
+
+.encuesta label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.encuesta input[type="radio"] {
+    margin-right: 8px;
+}
+
+.encuesta button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.encuesta button:hover {
+    background-color: #0056b3;
+}
+
+/* Comentarios */
+.comentarios {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.comentarios div {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.comentarios p {
+    font-size: 14px;
+    color: #888;
+}
+
+.comentarios form {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.comentarios input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.comentarios button {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comentarios button:hover {
+    background-color: #218838;
+}
+
+/* -------------------------- Sidebar Derecho -------------------------- */
+.right-sidebar {
+    width: 25%;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Widget del Clima */
+.weather-widget {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.weather-widget h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.weather-widget p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.weather-widget img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Contenedor de los enlaces con imágenes */
+.image-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los enlaces */
+    align-items: center;
+}
+
+/* Estilo para las imágenes de los enlaces */
+.redirect-image {
+    max-width: 80%; /* La imagen ocupa hasta el 80% del ancho disponible */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.redirect-image:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+}
+
+.redirect-image:active {
+    transform: scale(0.98); /* Efecto al hacer clic */
+}
+
+/* -------------------------- Responsividad -------------------------- */
+@media (max-width: 768px) {
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .image-links {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .redirect-image {
+        max-width: 40%; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+    }
+}
+
+/* -------------------------- Responsividad -------------------------- */
+@media (max-width: 768px) {
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .image-links {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .redirect-image {
+        max-width: 40%; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #muro-publicaciones {
+        padding: 10px;
+    }
+
+    .publicacion h2 {
+        font-size: 18px;
+    }
+
+    .publicacion p {
+        font-size: 13px;
+    }
+
+    .encuesta label {
+        font-size: 13px;
+    }
+
+    .comentarios input[type="text"] {
+        font-size: 13px;
+    }
+
+    .comentarios button {
+        font-size: 13px;
+    }
+}
+
+/* Widget del Clima */
+.weather-widget {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.weather-widget h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.weather-widget p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.weather-widget img {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+}

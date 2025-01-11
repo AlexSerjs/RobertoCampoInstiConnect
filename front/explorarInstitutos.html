@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstiConnect</title>
+  <link rel="stylesheet" href="adminInstitutos.css">
+</head>
+<body>
+  <header>
+    <h1>Gestión de Institutos</h1>
+  </header>
+  
+  <main>
+    <!-- Sección para Comunidades Autónomas -->
+    <section id="comunidades-section">
+      <h2>Comunidades Autónomas</h2>
+      <label for="comunidades-dropdown">Seleccione una comunidad:</label>
+      <select id="comunidades-dropdown">
+        <option value="">Seleccione una comunidad</option>
+      </select>
+    </section>
+
+    <!-- Sección para Institutos -->
+    <section id="institutos-section" class="hidden">
+      <h2>Institutos</h2>
+      <label for="institutos-dropdown">Seleccione un instituto:</label>
+      <select id="institutos-dropdown">
+        <option value="">Seleccione un instituto</option>
+      </select>
+    </section>
+
+    <!-- Contenedor para Cursos -->
+    <section id="cursos-container" class="hidden">
+      <h2>Cursos del Instituto</h2>
+      <ul id="cursos-list">
+        <!-- Cursos aparecerán aquí dinámicamente -->
+      </ul>
+    </section>
+
+    <!-- Contenedor para Grupos -->
+    <section id="grupos-container" class="hidden">
+      <h2>Grupos del Instituto</h2>
+      <ul id="grupos-list">
+        <!-- Grupos aparecerán aquí dinámicamente -->
+      </ul>
+    </section>
+
+    <!-- Botón para cerrar la gestión -->
+    <section id="cerrar-section">
+      <button id="cerrar-gestion-institutos-btn" class="hidden">Cerrar Gestión</button>
+    </section>
+
+    <!-- Botón para volver a la página principal -->
+    <section id="volver-section">
+      <button id="volver-btn">Volver a la página principal</button>
+    </section>
+  </main>
+
+  <script src="js/explorarInstitutos.js"></script>
+</body>
+</html>

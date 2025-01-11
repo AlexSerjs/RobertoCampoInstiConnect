@@ -1,0 +1,203 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo */
+body {
+    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/inicioSecion01H.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Estilo del contenedor del título */
+.title-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Estilo del contenedor de login */
+.login-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Estilo de los inputs */
+input {
+    width: 250px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+input, button {
+    font-family: 'Orbitron', sans-serif;
+}
+
+input:focus, .login-button:focus {
+    outline: 3px solid #3498db;
+}
+
+input::placeholder {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Estilo del botón de login */
+.actions {
+    margin-top: 1rem;
+}
+
+.login-button {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-button:hover, .login-button:focus {
+    background-color: #2dfff4;
+    color: black;
+    outline: none;
+}
+
+/* Estilo de los enlaces de registro y recuperación */
+.links {
+    margin-top: 1.5rem;
+}
+
+.links a {
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+
+/* Estilo del overlay de carga */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+    font-size: 1.5em;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo del toggle de contraseña */
+.toggle-password-custom {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Estilo del ícono de ojo abierto y cerrado */
+#eyeOpenCustom, #eyeClosedCustom {
+    fill: #666;
+    width: 18px;
+    height: 18px;
+}
+
+#eyeClosedCustom {
+    display: none;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    input {
+        width: 200px;
+    }
+
+    .login-button {
+        padding: 10px 30px;
+    }
+}

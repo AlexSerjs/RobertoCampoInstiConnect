@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #e0f7fa; /* Fondo azul claro */
+    color: #333; /* Texto general */
+}
+
+/* Contenedor de las tres columnas */
+.left-sidebar,
+.main-wall,
+.right-sidebar {
+    padding: 20px;
+}
+
+/* Sidebar izquierdo */
+.left-sidebar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-right: 1px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Muro central */
+.main-wall {
+    flex: 3;
+    background-color: #ffffff; /* Fondo blanco */
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+}
+
+/* Sidebar derecho */
+.right-sidebar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-left: 1px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Títulos y Encabezados */
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #00796b; /* Verde oscuro */
+    text-transform: uppercase;
+}
+
+/* Secciones específicas */
+#seccion-perfil,
+#menu-lateral,
+#section-cerrar-sesion {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+}
+
+/* Widgets del Clima e Imagenes */
+.weather-widget,
+.image-links {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Imágenes con redondeo */
+.image-links img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid #00796b; /* Verde oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-links img:hover {
+    transform: scale(1.05);
+}

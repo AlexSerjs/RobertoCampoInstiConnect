@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstiConnect - Registro</title>
+    <link rel="stylesheet" href="css/stylesRegister.css">
+    <link rel="stylesheet" href="css/claveDelegadoModal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="back-arrow-container">
+        <a href="javascript:history.back()" class="back-arrow">&#8592;</a>
+    </div>
+
+    <div class="register-container">
+        <h1 class="title">Registro</h1>
+
+        <!-- Botones para seleccionar entre participante y delegado -->
+        <div class="button-group">
+            <button id="participantBtn">Alumno</button>
+            <button id="delegateBtn">Delegado</button>
+        </div>
+
+        <!-- Modal para validar clave de delegado -->
+<div id="claveDelegadoModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Introducir Clave de Delegado</h2>
+        <label for="claveDelegadoInput">Clave de Delegado:</label>
+        <input type="text" id="claveDelegadoInput" placeholder="Ingrese su clave" required>
+        <div id="claveDelegadoError" style="color: red; display: none;">Clave incorrecta, inténtelo de nuevo.</div>
+        <button id="validarClaveDelegadoBtn">Validar</button>
+        <button id="cerrarClaveDelegadoModalBtn">Cerrar</button>
+    </div>
+</div>
+
+
+        <!-- Formulario de Alumno -->
+        <form id="participantForm" style="display:none;">
+            <div class="input-group">
+                <label for="fullName">Nombre Completo:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="input-group" style="display:none;">
+                <label for="photo">Foto (opcional):</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+                <img id="previewImagePhoto" src="images/iconDefault.jpg" alt="Foto de perfil" style="width: 100px; height: 100px; margin-top: 10px;">
+            </div>
+
+            <div class="input-group">
+                <label for="groupCode">Código de Grupo:</label>
+                <input type="text" id="groupCode" name="groupCode" placeholder="Cod-XXX" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Correo Educativo:</label>
+                <input type="email" id="email" name="email" placeholder="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="togglePassword" style="cursor: pointer; margin-left: 10px;">
+                    <!-- Icono de ojo abierto -->
+                    <svg id="eyeOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="#000"/>
+                    </svg>
+                    <!-- Icono de ojo cerrado (inicialmente oculto) -->
+                    <svg id="eyeClosed" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm7.5-5c0 4.1-3.4 7.5-7.5 7.5s-7.5-3.4-7.5-7.5 3.4-7.5 7.5-7.5 7.5 3.4 7.5 7.5zM12 6.5C10.4 6.5 9 7.9 9 9.5c0 .5.1 1 .3 1.5L5 15c1.7 1.5 3.9 2.5 6.3 2.5 2.4 0 4.6-1 6.3-2.5l-4.3-4.3c.5-.2 1-.3 1.5-.3 1.6 0 3 1.4 3 3 0 .5-.1 1-.3 1.5l1.6 1.6c1.5-1.7 2.5-3.9 2.5-6.3s-1-4.6-2.5-6.3L14.5 4.8c-.5-.2-1-.3-1.5-.3z" fill="#000"/>
+                    </svg>
+                </span>
+            </div>
+          
+            <div class="actions">
+                <button type="submit" class="register-button">Registrarse</button>
+            </div>
+        </form>
+
+        <!-- Formulario de Delegado -->
+        <form id="delegateForm" style="display:none;">
+            <div class="input-group">
+                <label for="fullNameDelegate">Nombre Completo:</label>
+                <input type="text" id="fullNameDelegate" name="fullName" required>
+            </div>
+
+            <div class="input-group"style="display:none;">
+                <label for="photoDelegate">Foto (opcional):</label>
+                <input type="file" id="photoDelegate" name="photo" accept="image/*">
+                <img id="previewImageDelegate" src="images/iconDefault.jpg" alt="Foto de perfil" style="width: 100px; height: 100px; margin-top: 10px;">
+            </div>
+
+            <!-- Select de Comunidad Autónoma que se llenará desde la API -->
+            <div class="input-group">
+                <label for="region">Comunidad Autónoma:</label>
+                <select id="region" name="region" required>
+                    <option value="">Seleccione su comunidad</option>
+                </select>
+            </div>
+
+            <!-- Select de Instituto que se llenará según la Comunidad Autónoma seleccionada -->
+            <div class="input-group">
+                <label for="instituteName">Instituto:</label>
+                <select id="instituteName" name="instituteName" required>
+                    <option value="">Seleccione su instituto</option>
+                </select>
+            </div>
+
+            <!-- Select de Ciclo Formativo que se llenará según el Instituto seleccionado -->
+            <div class="input-group">
+                <label for="cicloFormativo">Grado</label>
+                <select id="cicloFormativo" name="cicloFormativo" required>
+                    <option value="">Seleccione el Grado</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="academicYear">Año Lectivo:</label>
+                <input type="text" id="academicYear" name="academicYear" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="emailDelegate">Correo Educativo:</label>
+                <input type="email" id="emailDelegate" name="emailDelegate" placeholder="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="passwordDelegate">Contraseña:</label>
+                <input type="password" id="passwordDelegate" name="password" required>
+                <span id="togglePassword" style="cursor: pointer; margin-left: 10px;">
+                    <!-- Icono de ojo abierto -->
+                    <svg id="eyeOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="#000"/>
+                    </svg>
+                    <!-- Icono de ojo cerrado (inicialmente oculto) -->
+                    <svg id="eyeClosed" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm7.5-5c0 4.1-3.4 7.5-7.5 7.5s-7.5-3.4-7.5-7.5 3.4-7.5 7.5-7.5 7.5 3.4 7.5 7.5zM12 6.5C10.4 6.5 9 7.9 9 9.5c0 .5.1 1 .3 1.5L5 15c1.7 1.5 3.9 2.5 6.3 2.5 2.4 0 4.6-1 6.3-2.5l-4.3-4.3c.5-.2 1-.3 1.5-.3 1.6 0 3 1.4 3 3 0 .5-.1 1-.3 1.5l1.6 1.6c1.5-1.7 2.5-3.9 2.5-6.3s-1-4.6-2.5-6.3L14.5 4.8c-.5-.2-1-.3-1.5-.3z" fill="#000"/>
+                    </svg>
+                </span>
+            </div>    
+            
+            <div class="actions">
+                <button type="submit" class="register-button">Registrarse</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <script src="js/mainRegister.js"></script>
+   <script src="js/pasarelaClaveDelegado.js"></script> 
+</body>
+</html>

@@ -1,0 +1,247 @@
+/* -------------------------------------------------------------*/
+
+
+@media (max-width: 850px) {
+    /* General */
+    body, html {
+        font-size: 14px; /* Reduce el tamaño general de fuente */
+    }
+
+    /* Contenedor Principal */
+    .profile-container {
+        padding: 10px; /* Menos padding */
+    }
+
+    /* Título */
+    .profile-header h1 {
+        font-size: 2rem; /* Tamaño reducido para móviles */
+    }
+
+    /* Tarjeta de Perfil */
+    .profile-card {
+        flex-direction: column; /* Coloca foto e información en columna */
+        align-items: center;
+        padding: 15px; /* Menos padding */
+        width: 90%; /* Ocupa casi todo el ancho */
+    }
+
+    /* Foto de Perfil */
+    .profile-photo img {
+        width: 100px; /* Reduce el tamaño de la foto */
+        height: 100px;
+        margin: 0 0 10px 0; /* Espaciado inferior */
+    }
+
+    /* Información del Administrador */
+    .profile-info h2 {
+        font-size: 1.5rem; /* Tamaño más pequeño */
+    }
+
+    .profile-info p {
+        font-size: 1rem; /* Fuente más pequeña */
+    }
+
+    /* Animación de Fondo */
+    .hacker-animation {
+        display: none; /* Oculta la animación en móviles */
+    }
+
+    /* Sección */
+    section {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.5rem; /* Tamaño reducido */
+    }
+
+    /* Botones */
+    .action-card button,
+    #cerrar-gestion-institutos-btn,
+    #cerrar-sesion-btn,
+    #abrirFormulario,
+    #verClaves {
+        font-size: 0.9rem; /* Botones más pequeños */
+        padding: 8px 10px;
+    }
+
+    /* Modales */
+    .modal-content {
+        padding: 10px;
+        max-width: 90%; /* Ocupa casi todo el ancho */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content label {
+        font-size: 0.9rem;
+    }
+
+    .modal-content input,
+    .modal-content textarea,
+    .modal-content button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Sección de Institutos */
+    #institutos-section {
+        padding: 15px;
+    }
+
+    #institutos-section h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Tabla General */
+    table {
+        font-size: 0.8rem; /* Reduce el tamaño de fuente */
+    }
+
+    /* Botón de Cerrar Resultado */
+    #cerrar-resultado-claves-btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Gestión Dinámica */
+    #gestion-institutos-dinamico,
+    #comunidades-container,
+    #institutos-container,
+    #cursos-container,
+    #grupos-container {
+        padding: 10px;
+    }
+
+    /* Formulario de Claves */
+    #generarClaves-form {
+        padding: 10px;
+    }
+
+    #generarClaves-form label {
+        font-size: 0.9rem;
+    }
+
+    #generarClaves-form input,
+    #generarClaves-form select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #generarClaves-form button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Resultado de Claves */
+    #resultado-claves {
+        padding: 10px;
+    }
+
+    #resultado-claves table {
+        font-size: 0.8rem;
+    }
+    #resultado-claves table th:nth-child(1), /* Oculta columna ID */
+    #resultado-claves table th:nth-child(3), /* Oculta columna Comunidad */
+    #resultado-claves table th:nth-child(5), /* Oculta columna Estado */
+    #resultado-claves table th:nth-child(6) /* Oculta columna Fecha Creación */ {
+        display: none;
+    }
+
+    #resultado-claves table td:nth-child(1), /* Oculta valores de ID */
+    #resultado-claves table td:nth-child(3), /* Oculta valores de Comunidad */
+    #resultado-claves table td:nth-child(5), /* Oculta valores de Estado */
+    #resultado-claves table td:nth-child(6) /* Oculta valores de Fecha Creación */ {
+        display: none;
+    }
+
+    #resultado-claves table {
+        font-size: 0.9em; /* Ajusta el tamaño de la tabla en móviles */
+    }
+
+    #resultado-claves table th,
+    #resultado-claves table td {
+        text-align: center; /* Alinea al centro para mejor visualización */
+    }
+
+    #resultado-claves table th:nth-child(2), /* Clave */
+    #resultado-claves table th:nth-child(4), /* Instituto */
+    #resultado-claves table th:nth-child(7) /* Fecha Utilización */ {
+        font-size: 1em; /* Tamaño estándar para estas columnas */
+    }
+
+    #resultado-claves table td:nth-child(2), /* Clave */
+    #resultado-claves table td:nth-child(4), /* Instituto */
+    #resultado-claves table td:nth-child(7) /* Fecha Utilización */ {
+        font-size: 1em;
+    }
+
+    /* Modal */
+    #view-alumno-modal {
+      width: 95%; /* Mayor ancho para aprovechar pantallas pequeñas */
+      max-width: 100%; /* Elimina el límite de ancho */
+      padding: 15px; /* Reduce el padding */
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Ajusta el sombreado */
+      border-radius: 8px; /* Bordes ligeramente menos redondeados */
+    }
+  
+    #view-alumno-modal h2 {
+      font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+  
+    #view-alumno-modal .modal-content {
+      gap: 8px; /* Menor espacio entre los elementos */
+      font-size: 14px; /* Texto más pequeño */
+    }
+  
+    #view-alumno-modal select {
+      padding: 8px; /* Reduce el padding */
+      font-size: 14px; /* Texto más pequeño */
+    }
+  
+    #view-alumno-modal .close {
+      top: 5px; /* Posiciona más cerca del borde */
+      right: 10px;
+      font-size: 18px; /* Texto más pequeño */
+    }
+  
+    /* Botón Cerrar */
+    .modal-close-btn {
+      font-size: 14px; /* Texto más pequeño */
+      padding: 8px 16px; /* Reduce el padding */
+    }
+  
+    /* Overlay */
+    .modal-overlay {
+      background: rgba(0, 0, 0, 0.7); /* Oscurece más el fondo */
+    }
+  
+    /* Label */
+    label[for="alumnos-list-delete"] {
+      font-size: 12px; /* Texto más pequeño */
+    }
+  
+    /* Select */
+    #alumnos-list-delete {
+      padding: 8px 10px; /* Reduce el padding */
+      font-size: 12px; /* Texto más pequeño */
+    }
+  
+    #alumnos-list-delete:focus {
+      box-shadow: 0 0 3px rgba(0, 123, 255, 0.2); /* Reduce el efecto de foco */
+    }
+  
+    /* Botón Cerrar Modal */
+    .close-delete-modal-btn {
+      font-size: 12px; /* Texto más pequeño */
+      padding: 8px 16px; /* Reduce el padding */
+    }
+  
+    .close-delete-modal-btn:hover {
+      background-color: #aaa; /* Ajusta el color en hover */
+    }
+  }
+  

@@ -1,0 +1,121 @@
+/* Sidebar derecho */
+.right-sidebar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    border-radius: 10px; /* Bordes suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Widget del clima */
+.weather-widget {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* Gris claro */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.weather-widget p {
+    font-size: 14px;
+    color: #555; /* Gris oscuro */
+}
+
+/* Enlaces con imágenes */
+.image-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-links img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease;
+}
+
+.image-links img:hover {
+    transform: scale(1.05); /* Efecto hover: agrandar */
+}
+
+/* Contenedor del comunicado */
+.submit-comunicado {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-comunicado p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b; /* Verde oscuro */
+    margin-bottom: 15px;
+}
+
+/* Formulario del comunicado */
+#form-comunicado {
+    background-color: #f9f9f9; /* Fondo gris claro */
+    padding: 15px;
+    border-radius: 10px; /* Bordes suaves */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Campo del título */
+#form-comunicado .form-group input,
+#form-comunicado .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interior */
+    transition: border-color 0.3s ease;
+    resize: none; /* Desactiva el redimensionamiento */
+}
+
+/* Título con tamaño menor */
+#form-comunicado .form-group input {
+    margin-bottom: 10px;
+    height: auto; /* Campo de altura normal */
+}
+
+/* Área de texto más alta */
+#form-comunicado .form-group textarea {
+    height: 100px; /* Altura para varias líneas de texto */
+}
+
+/* Efecto de foco */
+#form-comunicado .form-group input:focus,
+#form-comunicado .form-group textarea:focus {
+    border-color: #00796b; /* Verde oscuro */
+    outline: none;
+}
+
+/* Botón del comunicado */
+#form-comunicado button {
+    background-color: #00796b; /* Verde oscuro */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#form-comunicado button:hover {
+    background-color: #004d40; /* Verde más oscuro */
+    transform: translateY(-2px); /* Pequeño efecto hover */
+}
+
+/* Mensaje del comunicado */
+.submit-comunicado p {
+    font-size: 16px;
+    color: #555; /* Gris oscuro */
+}

@@ -1,0 +1,207 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(180deg, #A2D6E4, #86BBCF);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Color de texto principal */
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-container:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #245B6F; /* Azul oscuro para resaltar */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #245B6F; /* Azul oscuro */
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #86BBCF; /* Azul suave */
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #245B6F; /* Azul más oscuro */
+    box-shadow: 0 0 8px rgba(36, 91, 111, 0.5); /* Brillo al enfocarse */
+    background-color: rgba(255, 255, 255, 1);
+}
+
+button {
+    font-family: 'Orbitron', sans-serif;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #245B6F, #3F88A8); /* Degradado en el botón */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #3F88A8, #245B6F); /* Inversión del degradado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.actions {
+    margin-top: 1.5rem;
+}
+
+.button-group {
+    margin-bottom: 2rem;
+}
+
+.button-group button {
+    margin: 0 1rem;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 2px solid #3F88A8; /* Azul más oscuro */
+    background: linear-gradient(90deg, #86BBCF, #A2D6E4); /* Degradado suave */
+    color: #245B6F; /* Texto oscuro */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.button-group button:hover {
+    background: linear-gradient(90deg, #A2D6E4, #86BBCF);
+    color: white;
+    border-color: #245B6F;
+}
+
+/* Contenedor de la flecha con fondo semitransparente */
+.back-arrow-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(36, 91, 111, 0.8);  /* Fondo azul oscuro con opacidad */
+    padding: 10px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.back-arrow {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #A2D6E4; /* Azul claro al pasar el cursor */
+}
+
+/* Fondo oscuro para overlays */
+#loadingOverlay, #claveDelegadoModal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+    font-size: 1.5em;
+}
+
+/* Spinner */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #245B6F; /* Azul oscuro */
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Modal */
+#claveDelegadoModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#claveDelegadoModal h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #245B6F; /* Azul oscuro */
+    margin-bottom: 1rem;
+}
+
+#claveDelegadoModal input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#claveDelegadoModal .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}

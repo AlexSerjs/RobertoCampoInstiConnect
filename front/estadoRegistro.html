@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, orientation=portrait">
+    <title>InstiConnect - Estado de Registro</title>
+    <link rel="stylesheet" href="css/estadoRegistro.css">
+</head>
+<body>
+    <div class="title-container">
+        <h1 class="title">InstiConnect</h1>
+    </div>
+    
+    <div class="status-container">
+        <!-- Mensaje de estado de perfil -->
+        <h1 class="status-message" id="statusMessage">Perfil Creado</h1>
+        
+        <!-- Botón para enviar el correo de verificación -->
+        <div class="actions" id="sendEmailContainer">
+            <button id="sendEmailButton">Enviar verificación a tu correo</button>
+        </div>
+
+        <!-- Botón para verificar el correo -->
+        <div class="actions" id="verifyEmailContainer">
+            <button id="verifyEmailButton" style="display: none;">Verifica tu correo y serás redirigido al inicio</button>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+
+    <script src="js/estadoRegistro.js"></script>
+</body>
+</html>

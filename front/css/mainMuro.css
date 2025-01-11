@@ -1,0 +1,190 @@
+/* Estilo general del muro central */
+.main-wall {
+    flex: 3;
+    background-color: #f0f2f5; /* Fondo gris claro */
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    max-height: 100vh; /* Limita la altura al tamaño de la ventana */
+    padding: 20px;
+}
+
+/* Contenedor de publicaciones */
+.publicacion {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes suaves */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover: "elevación" */
+.publicacion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la publicación */
+.publicacion h2 {
+    font-size: 18px;
+    color: #333; /* Gris oscuro */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenido de la publicación */
+.publicacion p {
+    font-size: 15px;
+    color: #555; /* Gris intermedio */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Fecha y autor */
+.publicacion small,
+.publicacion strong {
+    display: block;
+    font-size: 13px;
+    color: #888; /* Gris claro */
+    margin-top: 5px;
+}
+
+/* Imagen de la publicación */
+.publicacion img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón para descargar archivos */
+.publicacion a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1877f2; /* Azul Facebook */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.publicacion a:hover {
+    background-color: #145db2; /* Azul más oscuro */
+}
+
+/* Encuestas */
+.encuesta {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Gris claro */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.encuesta label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333; /* Gris oscuro */
+}
+
+.encuesta input[type="radio"] {
+    margin-right: 8px;
+}
+
+.encuesta button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #42b72a; /* Verde Instagram */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.encuesta button:hover {
+    background-color: #36a420; /* Verde más oscuro */
+}
+
+/* Comentarios */
+.comentarios h3 {
+    font-size: 16px;
+    color: #333; /* Gris oscuro */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.comentarios div {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #f9f9f9; /* Gris claro */
+    border-radius: 10px;
+    font-size: 14px;
+    color: #444; /* Gris intermedio */
+    line-height: 1.6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios div::first-line {
+    font-weight: bold;
+    color: #1877f2; /* Azul destacado */
+}
+
+.comentarios form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comentarios input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #ffffff; /* Blanco */
+    transition: border-color 0.3s ease;
+}
+
+.comentarios input[type="text"]:focus {
+    border-color: #1877f2; /* Azul Facebook */
+    outline: none;
+}
+
+.comentarios button {
+    padding: 10px 15px;
+    background-color: #42b72a; /* Verde Instagram */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.comentarios button:hover {
+    background-color: #36a420; /* Verde más oscuro */
+}
+
+/* Input con error */
+.input-error {
+    border-color: #e74c3c !important; /* Rojo error */
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animación para el input con error */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}

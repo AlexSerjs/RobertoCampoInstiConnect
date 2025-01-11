@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, orientation=portrait">
+    <title>InstiConnect - Inicio de Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="/frontend/manifest.json">
+    
+</head>
+<body>
+    <div class="title-container">
+        <h1 class="title">InstiConnect</h1>
+    </div>
+    
+    <div class="login-container">
+        <h2 class="subtitle">Academy Campus</h2>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="USUARIO" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="CONTRASEÑA" required>
+                <div class="toggle-password" onclick="togglePasswordVisibility('password', 'eyeOpen', 'eyeClosed')">
+                    <!-- Icono de ojo abierto -->
+                    <svg id="eyeOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-8c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" fill="#000"/>
+                    </svg>
+                    <!-- Icono de ojo cerrado -->
+                    <svg id="eyeClosed" style="display: none;" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 4.5C7 4.5 2.7 8.3 1 12c1.7 3.7 6 7.5 11 7.5s9.3-3.8 11-7.5c-1.7-3.7-6-7.5-11-7.5zM12 17c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm7.5-5c0 4.1-3.4 7.5-7.5 7.5s-7.5-3.4-7.5-7.5 3.4-7.5 7.5-7.5 7.5 3.4 7.5 7.5z" fill="#000"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button type="submit" class="login-button">Iniciar Sesión</button>
+            </div>
+        </form>
+
+        <div class="links">
+            <a href="register.html">REGISTRARSE</a>
+            <a href="recuperar.html">RECUPERAR</a>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" style="display: none;" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Cargando...</p>
+    </div>
+    
+
+    <script src="js/mainIndex.js"></script>
+</body>
+</html>

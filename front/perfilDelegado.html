@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstiConnect - Perfil</title>
+    <link rel="stylesheet" href="css/stylesDelegatePerfil.css">
+    <link rel="stylesheet" href="css/modalEditarPerfil.css">
+    <link rel="stylesheet" href="css/mobilePerfilDelegado.css" media="(max-width:850px)">
+</head>
+<body>
+    <!-- Botón para ir al muro -->
+    <div class="wall-button">
+        <a href="muro.html">
+            <img src="images/home.jpg" alt="Ir al Muro" width="50">
+        </a>
+    </div>
+
+    <!-- Sección de Información del Delegado -->
+    <section class="profile-details-section">
+        <h1>Perfil del Delegado</h1>
+
+        <!-- Foto del perfil -->
+        <div class="profile-photo">
+            <img src="images/iconDefault.jpg" id="fotoUsuario" class="user-photo">
+        </div>
+
+        <!-- Información del Delegado -->
+        <div class="profile-details">
+            <p><strong>Nombre Completo:</strong> <span id="nombre_completo"></span></p>
+            <p><strong>Grado:</strong> <span id="ciclo_formativo"></span></p>
+            <p><strong>Comunidad Autónoma:</strong> <span id="comunidad_autonoma"></span></p>
+            <p><strong>Instituto:</strong> <span id="nombre_instituto"></span></p>
+            <p><strong>Año Lectivo:</strong> <span id="anio_lectivo"></span></p>
+            <p><strong>Correo:</strong> <span id="email"></span></p>
+            <p><strong>Código Grupo:</strong> <span id="codigoGrupo"></span></p>
+            
+            <button id="editarPerfil" onclick="abrirModalEditarPerfil()">Editar Perfil</button>
+
+<!-- Modal -->
+<div id="modalEditarPerfil" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalEditarPerfil()">&times;</span>
+        <h2>Editar Perfil</h2>
+        <form id="formEditarPerfil">
+            <div class="form-group">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" >
+            </div>
+            <div class="form-group">
+                <label for="contrasenaActual">Contraseña Actual:</label>
+                <input type="password" id="contrasenaActual" name="contrasenaActual" >
+            </div>
+            <div class="form-group">
+                <label for="nuevaContrasena">Nueva Contraseña:</label>
+                <input type="password" id="nuevaContrasena" name="nuevaContrasena" >
+            </div>
+            <div class="form-group">
+                <label for="repetirContrasena">Repetir Nueva Contraseña:</label>
+                <input type="password" id="repetirContrasena" name="repetirContrasena" >
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+
+
+        </div>
+    </section>
+
+    <!-- Sección de Integrantes del Grupo -->
+    <section class="group-members-section">
+        <h2>Integrantes del Grupo</h2>
+
+        <table class="group-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Verificado</th>
+                    <th>Publicar</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </section>
+
+  <!-- Sección para Ingresar Asignaturas -->
+  <section class="add-subject-section">
+    <h2>Agregar Asignatura</h2>
+    <form id="addSubjectForm">
+        <label for="subject">Asignatura:</label>
+        <input type="text" id="subject" required>
+        
+        <label for="professor">Profesor:</label>
+        <input type="text" id="professor" required>
+        
+        <label for="emailInput">Correo:</label>
+        <input type="email" id="emailInput" required>
+
+        
+        <button type="button" id="addSubjectBtn">Añadir Asignatura</button>
+    </form>
+</section>
+
+
+<!-- Tabla de Asignaturas Guardadas -->
+<section class="saved-subjects-section">
+    <h2>Asignaturas Guardadas</h2>
+    <table class="saved-subjects-table">
+        <thead>
+            <tr>
+                <th>Asignatura</th>
+                <th>Profesor</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+            
+        </thead>
+        <tbody id="savedSubjectsBody">
+        </tbody>
+    </table>
+</section>
+
+
+
+<div id="editModal" style="display: none;">
+    <div class="modal-content">
+        <h2>Editar Asignatura</h2>
+        <form class="modal-form">
+            <label for="editSubject">Asignatura:</label>
+            <input type="text" id="editSubject">
+
+            <label for="editProfessor">Profesor:</label>
+            <input type="text" id="editProfessor">
+
+            <label for="editEmail">Correo:</label>
+            <input type="email" id="editEmail">
+
+            <button type="button" id="saveChangesBtn" onclick="guardarCambiosAsignatura()">Guardar Cambios</button>
+            <button type="button" id="closeModalBtn" onclick="cerrarModal()">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- Sección de Configuración de Horario -->
+<section class="schedule-configuration">
+    <h2>Horario de Clases</h2>
+    
+   <!-- Botón para crear el horario predeterminado -->
+<button id="createDefaultScheduleBtn" style="display: none;">Crear Horario</button>
+
+
+
+
+<!-- Botones de Modificar y Guardar Horario -->
+<div id="scheduleButtons" style="display: none;">
+<!-- Botón para abrir el modal de horario -->
+<button id="modifyScheduleBtn" onclick="abrirModalHorario()">Modificar Horario</button>
+
+<!-- Modal para editar el horario -->
+<div id="scheduleEditModal" class="modal-horario">
+    <div class="modal-horario-content">
+        <h2>Editar Horario de Clases</h2>
+        <table id="scheduleEditableTable" class="tabla-modal-horario">
+            <thead>
+                <tr>
+                    <th>Hora de Inicio</th>
+                    <th>Hora de Fin</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody >
+                
+            </tbody>
+        </table>
+        <button class="boton-modal-horario guardar" onclick="guardarCambiosHorario()">Guardar Cambios</button>
+        <button class="boton-modal-horario cancelar" onclick="cerrarModalHorario()">Cancelar</button>
+    </div>
+</div>
+
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+</div>
+
+<!-- Contenedor del horario -->
+<div id="scheduleContainer" style="display: none;">
+    <table class="schedule-table" id="scheduleTable">
+        <thead>
+            <tr>
+                <th>Hora de Inicio</th>
+                <th>Hora de Fin</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody id="horarioBody">
+            <!-- Los bloques horarios se llenarán dinámicamente -->
+        </tbody>
+    </table>
+
+    
+</div>
+
+</section>
+    <script src="js/perfilDelegado.js"></script>
+    <script src="js/codigoGrupo.js"></script>
+    <script src="js/editarPerfil.js"></script>
+    <script src="js/horarioWebSocket.js"></script>
+    <script src="js/asignaturaWebSocket.js"></script>
+    <script src="js/permisoWebSocket.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+/* adminGestionAlumnos.css   */ 
+/* Estilo general del modal */
+#view-alumno-modal {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Clase para ocultar */
+.hidden {
+  display: none !important;
+}
+
+/* Contenido del modal */
+#view-alumno-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px; /* Tamaño de texto ajustado */
+  line-height: 1.5;
+  color: #0f0; /* Texto verde */
+}
+
+#view-alumno-modal h2 {
+  color: #0f0; /* Títulos en verde */
+  text-align: center;
+  text-shadow: 0 0 10px #0f0; /* Efecto brillante */
+}
+
+#view-alumno-modal select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #0f0; /* Borde verde */
+  border-radius: 5px;
+  background-color: #000; /* Fondo negro */
+  color: #0f0; /* Texto verde */
+  margin-bottom: 15px;
+}
+
+#view-alumno-modal select:focus {
+  outline: none;
+  box-shadow: 0 0 10px #0f0; /* Efecto brillante al seleccionar */
+}
+
+/* Datos del alumno */
+#view-alumno-modal p {
+  margin: 5px 0;
+  display: none; /* Ocultar inicialmente */
+  color: #0f0;
+}
+
+#view-alumno-modal p span {
+  font-weight: bold;
+  color: #0f0; /* Resaltar los valores */
+}
+
+/* Mostrar datos después de seleccionar */
+#view-alumno-modal .show-data p {
+  display: block;
+}
+
+/* Botón cerrar */
+#view-alumno-modal .close {
+  
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0;
+}
+/* Botón cerrar */
+.modal-close-btn {
+  
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #0f0; /* Verde */
+  background-color: #000; /* Fondo negro */
+  border: 1px solid #0f0; /* Borde verde */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1001; /* Más alto que la superposición */
+}
+
+.modal-close-btn:hover {
+  background-color: #0f0; /* Fondo verde */
+  color: #000; /* Texto negro */
+  transition: 0.3s;
+}
+
+.hidden {
+  display: none !important;
+}
+.modal-content {
+  position: relative;
+  z-index: 1000; /* Más alto que la superposición */
+  background: rgba(0, 0, 0, 0.95);
+  padding: 20px;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* Detrás del contenido del modal */
+}
+
+
+
+/* Estilo general del modal */
+#view-alumno-modal {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+#view-alumno-modal:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1000;
+  padding: 20px;
+  background: #000;
+  color: #0f0;
+  border: 2px solid #0f0;
+  border-radius: 10px;
+}
+
+.modal-close-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #0f0;
+  background-color: #000;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  background-color: #0f0;
+  color: #000;
+  transition: 0.3s;
+}
+/* Estilo general del modal */
+#view-alumno-modal {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  transition: visibility 0s, opacity 0.3s ease;
+}
+
+#view-alumno-modal:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1000;
+  padding: 20px;
+  background: #000;
+  color: #0f0;
+  border: 2px solid #0f0;
+  border-radius: 10px;
+}
+
+.modal-close-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #0f0;
+  background-color: #000;
+  border: 1px solid #0f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  background-color: #0f0;
+  color: #000;
+  transition: 0.3s;
+}
+.hidden {
+  display: none !important; /* Ocultar con fuerza */
+}
+/* Estilo para el label que apunta al select específico */
+label[for="alumnos-list-delete"] {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #0f0;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Estilo para el select con el ID específico */
+#alumnos-list-delete {
+  width: 100%;
+  padding: 8px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color:  #0f0;
+  border: 1px solid  #0f0;
+  border-radius: 4px;
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  appearance: none; /* Quitar apariencia predeterminada del navegador */
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover específico para el select */
+#alumnos-list-delete:hover {
+  border-color: #888;
+}
+
+/* Focus específico para el select */
+#alumnos-list-delete:focus {
+  margin-bottom: 25px;
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+}
+.close-delete-modal-btn {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-delete-modal-btn:hover {
+  background-color: #bbb;
+}

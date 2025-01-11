@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstiConnect - Admin</title>
+  <link rel="stylesheet" href="css/admin-profile.css">
+  <link rel="stylesheet" href="css/adminGestionAlumnos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Perfil del Administrador -->
+  <div class="profile-container">
+    <div class="profile-header">
+      <h1>Administrador InstiConnect</h1>
+    </div>
+    <div class="profile-card">
+      <div class="profile-photo">
+        <img src="images/iconDefault.jpg" alt="Foto del Administrador">
+      </div>
+      <div class="profile-info">
+        <h2 id="admin-name"></h2>
+        <p id="admin-email"></p>
+      </div>
+    </div>
+    <div class="hacker-animation">
+      <span>|</span>
+      <span>|</span>
+      <span>|</span>
+      <span>|</span>
+      <span>|</span>
+    </div>
+  </div>
+  
+  <div>
+    <button id="cerrar-sesion-btn">Cerrar Sesión</button>
+  </div>
+
+
+  <!-- Sección para Alumnos -->
+  <section id="alumnos-section">
+    <h2>Gestión de Alumnos</h2>
+    <div class="action-card">
+      <p>Selecciona una acción:</p>
+      <!-- Botones -->
+     <!-- Botones de acción -->
+     <button class="open-view-modal-btn">Ver Detalles del Alumno</button>
+<button onclick="openDeleteAlumnoModal()" aria-label="Abrir modal para eliminar alumno">Eliminar Alumno</button>
+ </div>
+  </section>
+
+ <!-- Modal para Ver Detalles del Alumno -->
+ <div id="view-alumno-modal" class="modal hidden">
+  <div class="modal-overlay view-overlay"></div>
+  <div class="modal-content">
+    <h2>Detalles del Alumno</h2>
+    <select id="alumnos-list" onchange="fetchAlumnoDetails()">
+      <option value="">Seleccione un alumno</option>
+    </select>
+    <p><strong>ID:</strong> <span id="alumno-id"></span></p>
+    <p><strong>Nombre:</strong> <span id="alumno-nombre"></span></p>
+      <p><strong>Código Grupo:</strong> <span id="alumno-codigo-grupo"></span></p>
+      <p><strong>Email:</strong> <span id="alumno-email"></span></p>
+      <p><strong>Tipo:</strong> <span id="alumno-tipo"></span></p>
+      <p><strong>Verificado:</strong> <span id="alumno-verificado"></span></p>
+      <p><strong>Puede Publicar:</strong> <span id="alumno-puede-publicar"></span></p>
+      <p><strong>Fecha de Creación:</strong> <span id="alumno-fecha-creacion"></span></p>
+      <p><strong>Ciclo:</strong> <span id="alumno-ciclo"></span></p>
+      <p><strong>Nivel:</strong> <span id="alumno-nivel"></span></p>
+      <p><strong>Año:</strong> <span id="alumno-anio"></span></p>
+      <p><strong>Año Lectivo:</strong> <span id="alumno-anio-lectivo"></span></p>
+      <p><strong>Instituto:</strong> <span id="alumno-instituto"></span></p>
+      <p><strong>Comunidad Autónoma:</strong> <span id="alumno-comunidad"></span></p>
+      <!-- Botón para cerrar el modal -->
+      <button class="close-view-modal-btn">Cerrar</button>
+
+    </div>
+  </div>
+
+ <!-- Modal para Eliminar Alumno -->
+<div id="delete-alumno-modal" class="modal hidden">
+  <div class="modal-overlay delete-overlay"></div>
+  <div class="modal-content">
+    <h2>Eliminar Alumno</h2>
+    <label for="alumnos-list-delete">Selecciona un alumno para eliminar:</label>
+    <select id="alumnos-list-delete"></select>
+    <button id="delete-alumno-btn">Eliminar Alumno</button>
+    <button class="close-delete-modal-btn">Cerrar</button>
+  </div>
+</div>
+  
+  
+
+ <!-- Sección para Institutos -->
+<section id="institutos-section">
+  <h2>Gestión de Institutos</h2>
+  <div class="action-card">
+    <p>Administrar información de los institutos.</p>
+    <button id="explorar-institutos-btn">Explorar</button>
+  </div>
+</section>
+
+<!-- Contenido dinámico para la gestión -->
+<section id="gestion-institutos-dinamico" class="hidden">
+  <div id="comunidades-container">
+    <h3>Selecciona una Comunidad Autónoma</h3>
+    <select id="comunidades-dropdown">
+      <option value="">Seleccione una comunidad</option>
+    </select>
+  </div>
+
+  <div id="institutos-container" class="hidden">
+    <h3>Selecciona un Instituto</h3>
+    <select id="institutos-dropdown">
+      <option value="">Seleccione un instituto</option>
+    </select>
+  </div>
+
+  <div id="cursos-container" class="hidden">
+    <h3>Cursos</h3>
+    <table id="cursos-table" border="1">
+      <!-- Los datos se insertarán aquí desde JavaScript -->
+    </table>
+  </div>
+  
+  <div id="grupos-container" class="hidden">
+    <h3>Grupos</h3>
+    <table id="grupos-table" border="1">
+      <!-- Los datos se insertarán aquí desde JavaScript -->
+    </table>
+  </div>
+  
+
+  <button id="cerrar-gestion-institutos-btn">Cerrar Gestión</button>
+</section>
+
+
+<!-- Gestión de Claves Delegados -->
+<section id="generarClaves-section">
+  <h2>Gestión de Claves Delegados</h2>
+  <div class="action-card">
+      <p>Genera claves para los delegados de una comunidad y un instituto específicos.</p>
+      <button id="abrirFormulario">Abrir formulario</button>
+  </div>
+
+  <!-- Formulario para generar claves -->
+  <form id="generarClaves-form" style="display: none;">
+      <label for="comunidadesDropdown">Comunidad Autónoma:</label>
+      <select id="comunidadesDropdown" required>
+          <option value="">Seleccione una comunidad</option>
+      </select>
+
+      <label for="institutosDropdown">Instituto:</label>
+      <select id="institutosDropdown" required>
+          <option value="">Seleccione un instituto</option>
+      </select>
+
+      <label for="cantidad">Cantidad de Claves:</label>
+      <input type="number" id="cantidad" min="1" required>
+
+      <button type="submit">Generar Claves</button>
+  </form>
+
+  <!-- Contenedor para mostrar claves generadas -->
+  <div id="resultado" style="display: none;">
+      <h3>Claves Generadas:</h3>
+      <ul id="claves-generadas-lista">
+          <!-- Claves generadas dinámicamente -->
+      </ul>
+      <button id="cerrar-claves-generadas-btn">Cerrar</button>
+  </div>
+
+  <!-- Botón para ver todas las claves -->
+  <div class="action-card">
+      <button id="verClaves">Ver todas las claves creadas</button>
+  </div>
+
+  <!-- Tabla para mostrar claves -->
+  <div id="resultado-claves" style="display: none;">
+      <h3>Claves Creadas</h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Clave</th>
+                  <th>Comunidad</th>
+                  <th>Instituto</th>
+                  <th>Estado</th>
+                  <th>Fecha Creación</th>
+                  <th>Fecha Utilización</th>
+              </tr>
+          </thead>
+          <tbody id="claves-table-body">
+              <!-- Filas dinámicas -->
+          </tbody>
+      </table>
+      <button id="cerrar-resultado-claves-btn">Cerrar</button>
+  </div>
+</section>
+
+
+
+
+ 
+
+
+  <script src="js/perfilAdmin.js"></script>
+  <script src="js/adminAlumnos.js"></script>
+  <script src="js/adminAlumnosEliminarAlumno.js"></script>
+  <script src="js/adminInstitutos.js"></script>
+  <script src="js/adminGeneracionClaves.js"></script>
+</body>
+</html>

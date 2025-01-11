@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstiConnect - Perfil</title>
+    <link rel="stylesheet" href="css/stylesAlumnoPerfil.css">
+    <link rel="stylesheet" href="stylesGeneral.css">
+    <link rel="stylesheet" href="css/modalEditarPerfil.css">
+</head>
+<body>
+    <!-- Botón para ir al muro -->
+    <div class="wall-button">
+        <a href="muro.html">
+            <img src="images/home.jpg" alt="Ir al Muro" width="50">
+        </a>
+    </div>
+
+    <!-- Contenedor principal para organizar las secciones -->
+    <div class="main-container">
+        
+        <!-- Sección del perfil del alumno -->
+        <section class="profile-container">
+            <h1>Perfil de Usuario</h1>
+
+           <!-- Contenedor de la foto del perfil -->
+            <div class="profile-photo">
+                <img src="images/iconDefault.jpg" alt="Foto de usuario" id="fotoUsuario">
+            </div>
+
+
+            <!-- Detalles del perfil -->
+            <div class="profile-details">
+                <p><strong>Nombre Completo:</strong> <span id="nombre_completo"></span></p>
+                <p><strong>Grado:</strong> <span id="ciclo_formativo"></span></p>
+                <p><strong>Comunidad Autónoma:</strong> <span id="comunidad_autonoma"></span></p>
+                <p><strong>Instituto:</strong> <span id="nombre_instituto"></span></p>
+                <p><strong>Año Lectivo:</strong> <span id="anio_lectivo"></span></p>
+                <p><strong>Correo:</strong> <span id="email"></span></p>
+                <button id="editarPerfil" onclick="abrirModalEditarPerfil()">Editar Perfil</button>
+                <!-- Modal -->
+<div id="modalEditarPerfil" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarModalEditarPerfil()">&times;</span>
+        <h2>Editar Perfil</h2>
+        <form id="formEditarPerfil">
+            <div class="form-group">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" >
+            </div>
+            <div class="form-group">
+                <label for="contrasenaActual">Contraseña Actual:</label>
+                <input type="password" id="contrasenaActual" name="contrasenaActual" >
+            </div>
+            <div class="form-group">
+                <label for="nuevaContrasena">Nueva Contraseña:</label>
+                <input type="password" id="nuevaContrasena" name="nuevaContrasena" >
+            </div>
+            <div class="form-group">
+                <label for="repetirContrasena">Repetir Nueva Contraseña:</label>
+                <input type="password" id="repetirContrasena" name="repetirContrasena" >
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+
+            </div>
+        </section>
+
+        <!-- Sección del horario de clases -->
+        <section class="schedule-container">
+            <h2>Horario de Clases</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas del horario serán insertadas aquí -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Sección para mostrar las asignaturas del grupo -->
+        <section class="asignaturas-container">
+            <h2>Asignaturas del Grupo</h2>
+            <table class="asignaturas-table">
+                <thead>
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Profesor</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de asignaturas serán insertadas aquí -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script   src="js/perfilAlumno.js"></script>
+    <script   src="js/editarPerfil.js"></script>
+    <script src="js/horarioWebSocket.js"></script>
+    <script src="js/asignaturaWebSocket.js"></script>
+    <script src="js/permisoWebSocket.js"></script>
+</body>
+</html>

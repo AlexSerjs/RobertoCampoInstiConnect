@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstiConnect - Verificación de Correo</title>
+    <link rel="stylesheet" href="css/stylesVerificationCorreo.css">
+</head>
+<body>
+
+<div class="verification-container">
+    <h1>Verificación de Correo Electrónico</h1>
+    <p>Por favor, introduce el código de verificación que te hemos enviado a tu correo electrónico.</p>
+
+    <div class="input-group">
+        <label for="verificationCode">Código de Verificación:</label>
+        <input type="text" id="verificationCode" placeholder="XXXXXX">
+    </div>
+
+    <div class="actions">
+        <button id="verifyButton" class="verify-button">Verificar</button>
+    </div>
+
+    <p id="resendMessage">¿No recibiste el código? <button id="resendBtn" class="resend-button">Reenviar Código</button></p>
+
+
+</div>
+
+<script src="js/mainVerificationCorreo.js"></script>
+</body>
+</html>
